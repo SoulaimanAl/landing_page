@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: 1.3rem 10%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    padding: 1.3rem 10%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: -1;
+}
+
+#check {
+    display: none;
+}
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 992px){
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px){
+    .icons {
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar {
+        height: 12.7rem;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 1.5rem 0;
+        font-size: 1.1rem;          
+        /* color: black; */
+        text-align: center;
+    }
+}
+
+.icons:hover {
+    color: rgb(23, 182, 182);
+
+}
+
+.logo {
+    font-size: 2rem;
+    color: rgb(23, 182, 182);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar a {
+    margin-left: 2.5rem;
+    text-decoration: none;          
+    color: black;
+}
+
+.navbar a:hover {
+    color: rgb(23, 182, 182);
+}
+
+.div {
+    position: relative;
+    display: inline-block;
+
+}
+
+.div img {
+    display: block;
+}
+
+.p1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 19px;
+}
+
+.p2 {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 19px;
+}
+
+
+.div h1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(23, 182, 182);
+    font-size: 50px;
+}
