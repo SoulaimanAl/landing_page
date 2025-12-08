@@ -7,6 +7,11 @@
     font-family: "Poppins", sans-serif;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
+
 .header {
     position: fixed;
     top: 0;
@@ -52,6 +57,12 @@
     }
 }
 
+@media (max-width: 1200px){
+    .box1 img {
+        display: none;
+    }
+}
+
 @media (max-width: 768px){
     .icons {
         display: inline-flex;
@@ -90,7 +101,6 @@
         display: block;
         margin: 1.5rem 0;
         font-size: 1.1rem;          
-        /* color: black; */
         text-align: center;
     }
 }
@@ -117,13 +127,17 @@
     color: rgb(23, 182, 182);
 }
 
-.div {
+.hero {
     position: relative;
-    display: inline-block;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
 }
 
-.div img {
+.hero img {
     display: block;
 }
 
@@ -132,7 +146,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 19px;
+    font-size: clamp(15px, 2vw, 19px);
 }
 
 .p2 {
@@ -140,15 +154,181 @@
     top: 53%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 19px;
+    font-size: clamp(15px, 2vw, 19px);
 }
 
 
-.div h1 {
+.title {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: rgb(23, 182, 182);
-    font-size: 50px;
+    color: rgb(51, 241, 241);
+    font-size: clamp(40px, 5vw, 50px);  /* Dynamic responsive text */
+}
+
+.hero1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;                       
+    padding: 50px 0;
+    background-color: rgb(235, 235, 235);
+    gap: 5rem;
+    margin-top: 50px;
+}
+
+.box {
+    width: 300px;
+    background: rgb(235, 235, 235);
+    text-align: center;
+    color: rgb(136, 133, 133);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.icon1 {
+    font-size: 4rem;
+    color: rgb(89, 168, 168);
+}
+
+.title2 {
+    font-size: 18px;
+    font-weight: 1000;
+    padding-bottom: 15px;
+    color: black;
+}
+
+.box p {
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 20rem;
+    margin-left: 20rem;
+    padding: 50px 0;
+    gap: 5rem;
+    margin-top: 50px;                     
+    background-color: white;
+} */
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 25rem;
+    margin-left: 25rem;         /* allow wrapping */
+    justify-content: center;
+    gap: 3rem;                /* nice spacing */
+    padding: 50px 0;
+    margin: 0 auto;
+    width: 80%;               /* prevents huge stretching */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 3rem;
+    padding: 50px 0;
+    position: relative;
+}
+
+
+.bigtitle {
+    display: block;
+    width: 100%;
+    height: 0;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 570%;
+    color: rgb(222, 240, 240);
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.underbtitle {
+    display: block;
+    font-size: 120%;
+    width: 100%;
+    text-align: center;
+    text-wrap: initial;
+    padding: 0;
+    margin-top: 30px;
+    color: rgb(118, 136, 136);
+}
+
+/* .box1 {
+    display: flex;
+    align-items: flex-start;
+    width: 300px;
+    border-radius: 10px;
+    color: rgb(136, 133, 133);
+} */
+.box1 {
+    width: 25%;               /* 2 boxes per row */
+    min-width: 280px;         /* prevent too small boxes */
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    align-items: flex-start;
+}
+
+.icon2 .material-symbols-outlined {
+    font-size: 2.5rem;
+    color: rgb(89, 168, 168);
+}
+
+.icon2 {
+    font-size: 2.5rem;
+    color: rgb(89, 168, 168);
+}
+
+.text {
+    flex: 1;
+}
+
+.title3 {
+    padding-left: 20px;
+    padding-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.box1 p {
+    padding-left: 20px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 14;
+    color: rgb(124, 123, 123);
+}
+
+.boximg {
+    width: 25%;               /* 2 boxes per row */
+    min-width: 280px;         /* prevent too small boxes */
+    gap: 10px;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+.background {
+    width: 10px;
+    height: 60px;
+    background-color: blue;
+}
+.boximg img {
+    padding-top: 4rem;
+    width: 80%;
+    height: auto;      /* <- important */
+    object-fit: cover;
 }
